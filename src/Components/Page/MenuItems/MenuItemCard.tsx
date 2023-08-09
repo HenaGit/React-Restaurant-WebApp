@@ -22,8 +22,6 @@ function MenuItemCard(props: Props) {
       userId: "d58976a0-bab2-474c-8ce3-fd0fed12ae45",
     });
 
-    console.log(response);
-
     setIsAddingToCart(false);
   };
   return (

@@ -4,6 +4,7 @@ import { useGetMenuItemByIdQuery } from "../Apis/menuItemApi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useUpdateShoppingCartMutation } from "../Apis/shoppingCartApi";
+import { MainLoader } from "../Components/Page/Common";
 // USER ID-d58976a0-bab2-474c-8ce3-fd0fed12ae45===a52ddc7b-d3d6-4727-b23f-c45f495c043f
 
 function MenuItemDetails() {
@@ -29,8 +30,6 @@ function MenuItemDetails() {
       updateQuantityBy: quantity,
       userId: "d58976a0-bab2-474c-8ce3-fd0fed12ae45",
     });
-
-    console.log(response);
 
     setIsAddingToCart(false);
   };
@@ -114,7 +113,7 @@ function MenuItemDetails() {
             className="d-flex justify-content-center"
             style={{ width: "100%" }}
           >
-            <div>Loading...</div>
+            <MainLoader />
           </div>
         )}
     </div>
