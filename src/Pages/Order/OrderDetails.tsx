@@ -8,7 +8,6 @@ function OrderDetails() {
   const { data, isLoading } = useGetOrderDetailsQuery(id);
   let userInput, orderDetails;
   if (!isLoading && data?.result) {
-    console.log(data.result);
     userInput = {
       name: data.result[0].pickupName,
       email: data.result[0].pickupEmail,
@@ -16,9 +15,9 @@ function OrderDetails() {
     };
     orderDetails = {
       id: data.result[0].orderHeaderId,
-      cartItems: data.result[0].cartItems,
-      cartTotal: data.result[0].cartTotal,
-      status: data.result[0].statu,
+      cartItems: data.result[0].orderDetails,
+      cartTotal: data.result[0].orderTotal,
+      status: data.result[0].status,
     };
   }
 
