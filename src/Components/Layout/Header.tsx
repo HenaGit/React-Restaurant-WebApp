@@ -7,6 +7,7 @@ import {
   emptyUserState,
   setLoggedInUser,
 } from "../../Storage/Redux/userAuthSlice";
+import { SD_Roles } from "../../Utility/SD";
 let logo = require("../../Assets/Images/mango.png");
 
 function Header() {
@@ -48,6 +49,50 @@ function Header() {
                   Home
                 </NavLink>
               </li>
+              {userData.role == SD_Roles.ADMIN ? (
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Admin Panel
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li
+                      style={{ cursor: "pointer" }}
+                      className="dropdown-item"
+                      onClick={() => navigate("order/myorders")}
+                    >
+                      My Orders
+                    </li>
+                    <li
+                      style={{ cursor: "pointer" }}
+                      className="dropdown-item"
+                      onClick={() => navigate("order/allOrders")}
+                    >
+                      All Orders
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Something else here
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/order/myorders"
+                  >
+                    Orders
+                  </NavLink>
+                </li>
+              )}
               <li className="nav-item">
                 <NavLink
                   className="nav-link"
@@ -57,52 +102,6 @@ function Header() {
                   <i className="bi bi-cart"></i>{" "}
                   {userData.id && `(${shoppingCartFromStore.length})`}
                 </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link"
-                  aria-current="page"
-                  to="/order/myorders"
-                >
-                  Orders
-                </NavLink>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="https://transform.tools/json-to-typescript"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Admin Panel
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a
-                      className="dropdown-item"
-                      href="https://transform.tools/json-to-typescript"
-                    >
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="dropdown-item"
-                      href="https://transform.tools/json-to-typescript"
-                    >
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="dropdown-item"
-                      href="https://transform.tools/json-to-typescript"
-                    >
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
               </li>
               <div className="d-flex" style={{ marginLeft: "auto" }}>
                 {userData.id && (
