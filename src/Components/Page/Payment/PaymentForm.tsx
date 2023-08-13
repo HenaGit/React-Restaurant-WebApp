@@ -38,7 +38,6 @@ const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
       toastNotify("An unexpected error occured.", "error");
       setIsProcessing(false);
     } else {
-      console.log(result);
       let grandTotal = 0;
       let totalItems = 0;
       const orderDetailsDTO: any = [];
