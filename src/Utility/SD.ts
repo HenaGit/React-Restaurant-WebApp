@@ -15,5 +15,5 @@ export enum SD_Roles {
     ENTREE = "Entrée",
     DESSERT = "Dessert",
     BEVERAGES = "Beverages",
-    HABESHADISH="HabeshaDish",
+    HABESHADISH="Habesha Dish",
   }
