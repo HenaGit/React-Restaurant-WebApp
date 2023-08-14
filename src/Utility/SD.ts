@@ -10,3 +10,10 @@ export enum SD_Roles {
     COMPLETED = "Completed",
     CANCELLED = "Cancelled",
   }
+  export enum SD_Categories {
+    APPETIZER = "Appetizer",
+    ENTREE = "Entrée",
+    DESSERT = "Dessert",
+    BEVERAGES = "Beverages",
+    HABESHADISH="HabeshaDish",
+  }
