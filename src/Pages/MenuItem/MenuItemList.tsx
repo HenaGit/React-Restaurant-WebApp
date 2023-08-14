@@ -13,12 +13,12 @@ function MenuItemList() {
       {!isLoading && (
         <div className="table p-5">
           <div className="d-flex align-items-center justify-content-between">
-            <h1 className="text-success">MenuItem List</h1>
+            <h1 className="text-success">Menu Item List</h1>
             <button
               className="btn btn-success"
               onClick={() => navigate("/menuitem/menuitemupsert")}
             >
-              Add New
+              Add New Menu Item
             </button>
           </div>
           <div className="p-2">
