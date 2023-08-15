@@ -118,7 +118,11 @@ function AllOrders() {
               </button>
             </div>
           </div>
-
+          <div className="mx-5">
+            <div className="bg-danger form-control text-center text-white h4 ">
+              In this demo, orders older than 3 days might be deleted!
+            </div>
+          </div>
           <OrderList isLoading={isLoading} orderData={orderData} />
           <div className="d-flex mx-5 justify-content-end align-items-center">
           <div>Rows per page: </div>
