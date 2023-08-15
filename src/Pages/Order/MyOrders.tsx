@@ -18,10 +18,17 @@ function MyOrders() {
            <h1 className="text-success">My Orders</h1>
          </div>
 
-         <OrderList
-            isLoading={isLoading}
-            orderData={data?.apiResponse.result}
-          />
+         {data?.apiResponse.result.length > 0 && (
+            <OrderList
+              isLoading={isLoading}
+              orderData={data?.apiResponse.result}
+            />
+          )}
+          {!(data?.apiResponse.result.length > 0) && (
+            <div className="px-5 py-3">
+              You do not have any previous orders.
+            </div>
+          )}
        </>
       )}
     </>
